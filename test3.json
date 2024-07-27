@@ -29,7 +29,7 @@
   { "key": "dr_低端", "name": "低端 | 影视", "type": 3, "api": "./lib/drpy2.min.js", "searchable": 1, "playerType": 2, "quickSearch": 1, "filterable": 1, "ext": "./lib/ddys.js" },  
   { "key": "pbys", "name": "片吧 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib/片吧影视.json" }, 
   { "key": "圣城1080", "name": "圣城 | 影视","type": 3,"api": "csp_XBPQ","timeout":60,"searchable":1,"quickSearch":1,"filterable":1,"ext":"./lib/圣城1080.json", "jar": "./jar/XBPQ.jar"},
-  { "key": "剧圈圈", "name": "剧圈 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "ua": "okhttp/3.15", "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "ext": "./lib/剧圈.json" },
+  //{ "key": "剧圈圈", "name": "剧圈 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "ua": "okhttp/3.15", "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "ext": "./lib/剧圈.json" },
   { "key": "唐人街", "name": "唐人街 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib/唐人街.json" }, 
   { "key": "ppxys", "name": "PPX | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib/ppxys.json" },  
   { "key": "网飞", "name": "网飞 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib/网飞.json" },
