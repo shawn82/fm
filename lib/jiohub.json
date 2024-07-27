@@ -1,0 +1,25 @@
+{
+		"站名": "Jiohub",
+		"作者": "316",
+		"主页url": "https://jiohub.top/",
+		
+		"分类url": "https://jiohub.top/list/{cateId}?video_tag={class}&video_year={year}&page={catePg}&size=24",
+		"分类": "最新$%E6%9C%80%E6%96%B0#电影$%E7%94%B5%E5%BD%B1#美剧$%E7%BE%8E%E5%89%A7#韩剧$%E9%9F%A9%E5%89%A7#日剧$%E6%97%A5%E5%89%A7#动漫$%E5%8A%A8%E6%BC%AB#国产$%E5%9B%BD%E4%BA%A7",
+
+
+		"数组": "<a href=\"/watch/&&</a",
+		"图片": "src=\"&&\"",
+		"标题": "class=\"video-item-card-title&&</div>",
+		"链接": "href=\"&&\"",
+		"副标题": "class=\"item-card-heard-speed&&</div>",
+		"评分": "class=\"item-card-heard-score&&</div>",
+		"链接前缀": "https://jiohub.top",
+
+
+
+		
+		"嗅探词": "index.m3u8#.mp4#m3u8#.m3u8#/tos/#.flv#video/tos"
+		
+		
+		
+}
