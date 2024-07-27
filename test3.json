@@ -34,6 +34,7 @@
   { "key": "ppxys", "name": "PPX | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib/ppxys.json" },  
   { "key": "网飞", "name": "网飞 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib/网飞.json" },
   { "key": "kuya", "name": " 酷亚 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib/酷亚影院.json" },    
+  { "key": "wvod", "name": "蛙 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib/蛙影视.json" },    
   { "key": "达达龟", "name": "达达龟 | 影视", "type": 3, "api": "csp_Dadag", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/PandaQ240724.jar" },  
 
  
