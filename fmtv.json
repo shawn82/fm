@@ -1,0 +1,12 @@
+{
+    "urls": [
+      {
+          "url": "https://raw.githubusercontent.com/shawn82/fm/main/fm.json",
+          "name": " 📺 | 追剧FMTV 2.0",
+      },
+      {
+          "url": "https://raw.githubusercontent.com/shawn82/fm/main/fm18.json",
+          "name": "🔞 | FMTV ",
+      }
+  ]
+}
