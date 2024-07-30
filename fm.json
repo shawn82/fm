@@ -37,7 +37,9 @@
   { "key": "wvod", "name": "蛙 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/蛙影视.json" }, 
   { "key": "bzhan", "name": "B站 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/b站影视.json" },    
   { "key": "zizi", "name": "子子 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/子子影视.json" },   
-  { "key": "纽约影视", "name": "纽约 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/纽约影视.json" },   
+  { "key": "纽约影视", "name": "纽约 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/纽约影视.json" },
+  { "key": "Euvod影视", "name": "Euvod | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/Euvod影视.json" }, 
+  { "key": "华乐影视", "name": "华乐 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/华乐影视.json" }, 	  
   { "key": "达达龟", "name": "达达龟 | 影视", "type": 3, "api": "csp_Dadag", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/PandaQ240724.jar" },  
 
  
