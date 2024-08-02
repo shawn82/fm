@@ -5,9 +5,9 @@
     "分类url": "https://nuu.su/x/id/{cateId}/area/{area}/year/{year}/page/{catePg}/by/{sort}.html",
     "分类": "电影$1#剧集$2#动漫$3#综艺$4",
 
-    "免嗅": "1",
+    //"免嗅": "1",
     "嗅探词": ".m3u8#.mp4#.flv#.mp3#.m4a",
-    "过滤词": "data.m3u8.cc",
+    //"过滤词": "data.m3u8.cc",
     
     "分类筛选": "1",
     "筛选": {
