@@ -11,7 +11,7 @@
 	"图片": "data-original=\"&&\"[替换:/vod1>>https://61.147.93.252:15002/vod1]",
 	"标题": "title=\"&&\"",
 	"链接": "href=\"&&\"",
-	"副标题": "<span>&&</span>",
+	"副标题": "class=\"v-item-bottom\">&&</div>",
 	
 	"搜索模式": "1",
 	"搜索url": "https://www.keke13.com:51111/search?k={wd}",
