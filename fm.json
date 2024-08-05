@@ -34,6 +34,7 @@
   { "key": "唐人街", "name": "唐人街 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/唐人街.json" }, 
   { "key": "ppxys", "name": "PPX | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/ppxys.json" },  
   { "key": "网飞", "name": "网飞 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/网飞.json" },
+  { "key": "网飞啦", "name": "网飞啦 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/网飞啦.json" },   
   { "key": "kuya", "name": " 酷亚 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/酷亚影院.json" },    
   { "key": "wvod", "name": "蛙 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/蛙影视.json" }, 
   { "key": "bzhan", "name": "B站 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/b站影视.json" },    
@@ -41,7 +42,11 @@
   { "key": "纽约影视", "name": "纽约 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/纽约影视.json" },
   { "key": "Euvod影视", "name": "Euvod | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/Euvod影视.json" }, 
   { "key": "华乐影视", "name": "华乐 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/华乐影视.json" }, 
-  { "key": "4k影视", "name": "4K | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/4k影视.json" },  	  
+  { "key": "4k影视", "name": "4K | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/4k影视.json" },  	
+  { "key": "cnflix", "name": "CNFLIX | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/cnflix.json" },  
+  { "key": "时代", "name": "时代 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/时代影视.json" },    
+  { "key": "永乐", "name": "永乐 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/永乐影视.json" },  
+  { "key": "黑猫", "name": "黑猫 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/黑猫影视.json" },     
   { "key": "达达龟", "name": "达达龟 | 影视", "type": 3, "api": "csp_Dadag", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/PandaQ240724.jar" },  
 
  
