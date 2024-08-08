@@ -4,7 +4,7 @@
   "logo": "https://fai-mang.net/wp-content/uploads/2024/05/logoico.png",
   "wallpaper": "http://fai-mang.net/image.php",
   "sites": [
-  { "key": "lf_js_search","name":"搜索","type":3,"searchable":0,"changeable":1,"quickSearch":0,"filterable":0,"api":"./lib/lf_search3_min.js"}, 
+  { "key": "lf_js_search","name":"此版本11／8后无法使用，请到Facebook上联系","type":3,"searchable":0,"changeable":1,"quickSearch":0,"filterable":0,"api":"./lib/lf_search3_min.js"}, 
   { "key": "heimuer1", "name": "黑木耳 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/黑木耳资源.json" },
   { "key": "huaweiba", "name": "华为吧 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/华为吧资源.json" },
   { "key": "wujinzy", "name": "无尽 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/无尽资源.json" }, 
