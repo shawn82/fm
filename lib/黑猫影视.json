@@ -21,7 +21,6 @@
   "搜索url": "https://heimaotv.vip/vod/search.html?wd={wd}",
   "搜索数组": "class=\"search-box flex rel&&class=\"thumb-s collection fa&&</div",
   "搜索链接": "href=\"&&\"",
-  "搜索链接前缀": "https://heimaotv.vip",
   "搜索图片": "url(&&)",
   "搜索标题": "thumb-txt cor4 hide\">&&</div",
   "搜索副标题": "public-list-prb hide ft2\">&&</span>",
