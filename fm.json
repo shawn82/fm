@@ -1,6 +1,6 @@
 {
   "spider" : "./jar/pg316.jar",
-  "lives": [ { "name": "tvlive", "type": 0, "url": "https://www.stream-link.org/stream-link.m3u", "playerType": 2 }],  
+  "lives": [ { "name": "tvlive", "type": 0, "url": "https://www.stream-link.org/stream-link.m3u", "playerType": 1 }],  
   "logo": "https://fai-mang.net/wp-content/uploads/2024/05/logoico.png",
   "wallpaper": "http://fai-mang.net/image.php",
   "sites": [
