@@ -41,7 +41,8 @@
   { "key": "pbys", "name": "片吧 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/片吧影视.json" }, 
   { "key": "圣城1080", "name": "圣城 | 影视","type": 3,"api": "csp_XBPQ","timeout":60,"searchable":1,"quickSearch":1,"filterable":1,"ext":"./lib/圣城1080.json" },
   { "key": "剧圈圈", "name": "剧圈 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "ua": "okhttp/3.15", "quickSearch": 1, "filterable": 1, "ext": "./lib/剧圈.json" },
- 
+  { "key": "Ikanbot", "name": "爱看 | 影视", "type": 3, "api": "csp_Ikanbot", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 1 , "ext":"https://v.ikanbot.com"},  
+
 
   
 
@@ -49,7 +50,6 @@
  
   //{ "key": "NanGua", "name": "南瓜 | 影视", "type":3, "api":"csp_NanGua", "searchable":1, "changeable":1},
   //{ "key": "达达龟", "name": "达达龟 | 影视", "type": 3, "api": "csp_Dadag", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/PandaQ240724.jar" },  	  
-  //{ "key": "Ikanbot", "name": "爱看 | 影视", "type": 3, "api": "csp_Ikanbot", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 1 , "ext":"https://v.ikanbot.com"},  
   //{ "key": "ffzy", "name": "非凡 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/非凡资源.json" },   
   //{ "key": "天启", "name": "天启 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/天启影视.json" },
   //{ "key": "iolecc", "name": "爱欧乐 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/爱欧乐iole.json" },  
