@@ -1,5 +1,6 @@
 {
   "spider" : "./jar/pg316.jar",
+  "logo": "https://fai-mang.net/eggtart.png",
   "sites": [
   { "key": "蛋挞专用", "name": "蛋挞专用", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/歪片oscar.json" }
   ],
