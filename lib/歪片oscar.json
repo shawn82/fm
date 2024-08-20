@@ -14,7 +14,7 @@
 
 		"线路二次截取": "<div class=\"module-tab-items-box swiper-wrapper\">&&<div class=\"shortcuts-mobile-overlay",
 		"线路数组": "<div&&</div>[排序:FF源>HD源>LZ源>TK源>BD源>BJ源>UK源>KK源][不包含:BF源#HN源#QY源#TX源#MG源#YK源]",
-		"线路标题": "<span data-dropdown-value=\"&&\">&&</small>[替换:FF源>>蛋挞#HD源>>AIKO#LZ源>>傻强#TK源>>露娜#BD源>>Ally#BJ源>>Jonnie#UK源>>阿Sam#KK源>>阿莲]",
+		"线路标题": "<span data-dropdown-value=\"&&\">&&</small>[替换:FF源>>AIKO#HD源>>蛋挞#LZ源>>傻强#TK源>>露娜#BD源>>Ally#BJ源>>Jonnie#UK源>>阿Sam#KK源>>阿莲]",
 
 		"播放链接": "href=\"&&\"",
 		"播放链接前缀": "https://waipian.tv",
