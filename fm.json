@@ -13,8 +13,8 @@
   "sites": [
   //{ "key": "lf_js_search","name":"搜索","type":3,"searchable":0,"changeable":1,"quickSearch":0,"filterable":0,"api":"./lib/lf_search3_min.js"}, 
   { "key": "豆瓣", "name": "豆瓣 | 推荐", "type": 3, "api": "csp_Douban", "searchable": 0, "changeable": 1, "ext": "./lib/douban.json" },  	  
-  { "key": "T4-heimuer", "name": "神速 | 无广告", "type": 4, "api": "https://tang.hz.cz/power/hme?token=cb70f1ae", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },
-  { "key": "T4-安博", "name": "安博 | 影视", "type": 4, "api": "https://tang.hz.cz/power/ub18?token=cb70f1ae", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },
+  { "key": "T4-heimuer", "name": "神速 | 无广告", "type": 4, "api": "https://tang.hz.cz/power/hme?token=6023282f", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },
+  { "key": "T4-安博", "name": "安博 | 影视", "type": 4, "api": "https://tang.hz.cz/power/ub18?token=6023282f", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },
   { "key": "GimyTV", "name": "Gimy | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/gimyTV.json" },
   { "key": "cnflix", "name": "CNFLIX | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/cnflix.json" },  	  
   { "key": "kekeys", "name": "可可 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/可可影视.json" }, 
