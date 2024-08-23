@@ -2,9 +2,7 @@
   "spider" : "./jar/pg316.jar",
   "logo": "https://fai-mang.net/eggtart2.png",
   "sites": [
-  { "key": "蛋挞专用", "name": "蛋挞专用", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/歪片oscar.json" },
-  { "key": "T4-欧乐", "name": "欧乐 | 影视", "type": 4, "api": "https://tang.hz.cz/power/olelive?token=6023282f", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },	  	  
-  { "key": "T4-heimuer", "name": "神速 | 无广告", "type": 4, "api": "https://tang.hz.cz/power/hme?token=6023282f", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 }
+  { "key": "蛋挞专用", "name": "蛋挞专用", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/歪片oscar.json" }
   ],
   "doh": [
   { "name": "Google", "url": "https://dns.google/dns-query", "ips": [ "8.8.4.4", "8.8.8.8" ] },
