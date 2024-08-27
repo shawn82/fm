@@ -1,5 +1,6 @@
 [
 {"name":"FM | MY","url":"https://raw.githubusercontent.com/shawn82/tvbox/master/mylist.txt"},
+{"name":"FM+TV | MY","url":"https://raw.githubusercontent.com/MIFNtechnology/siaranMy/main/myIPtv.m3u8"},
 {"name":"FM | HK","url":"https://raw.githubusercontent.com/shawn82/tvbox/master/hklist.txt"},
 {"name":"电台 | 海外","url":"https://raw.githubusercontent.com/shawn82/tvbox/master/radio.m3u"}
 ]
