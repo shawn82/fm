@@ -8,7 +8,7 @@
   { "name": "直播4 - 台湾" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/taiwan.m3u", "playerType": 2 },	   
   { "name": "直播5 - 美国" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/us.m3u8", "playerType": 2 },
   { "name": "直播6 - 正常" ,"type": 0, "url": "https://tv.iill.top/m3u/Gather", "playerType": 2 },
-  { "name": "直播7 - MYTV Super" ,"type": 0, "url": "https://tv.iill.top/m3u/MyTV", "playerType": 2 },
+  { "name": "直播7 - MYTV Super" ,"type": 0, "url": "https://tv.iill.top/m3u/MyTV", "playerType": 2 }
   //{ "name": "直播8 - 运动" ,"type": 0, "url": "https://tv.iill.top/m3u/Sport", "playerType": 2 }  
   ],   
   "logo": "https://fai-mang.net/wp-content/uploads/2024/05/logoico.png",
