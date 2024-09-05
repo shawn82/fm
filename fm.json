@@ -19,7 +19,7 @@
   { "key": "T4-heimuer", "name": "神速 | 无广告", "type": 4, "api": "https://tang.hz.cz/power/hme?token=ab9f85a8", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },
   { "key": "T4-安博", "name": "安博 | 影视", "type": 4, "api": "https://tang.hz.cz/power/ub18?token=ab9f85a8", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },
   //{ "key": "heimuer1", "name": "神速 | 采集", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/黑木耳资源.json" },	  
-  { "key": "香蕉影视", "name": "香蕉 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/香蕉影视.json" },  
+  //{ "key": "香蕉影视", "name": "香蕉 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/香蕉影视.json" },  
   { "key": "豆瓣", "name": "豆瓣 | 推荐", "type": 3, "api": "csp_Douban", "searchable": 0, "changeable": 1, "ext": "./lib/douban.json" }, 
   { "key": "GimyTV", "name": "Gimy | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/gimyTV.json" },
   { "key": "cnflix", "name": "CNFLIX | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/cnflix.json" },  	  
