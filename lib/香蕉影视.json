@@ -1,0 +1,15 @@
+ {
+                "主页url": "https://39998.tv/",
+                "数组": "class=\"flex flex-col items-center&&class=\"text-center text-sm mx-1&&</div",
+                "图片": "data-original=\"&&\"",
+                "标题": "alt=\"&&\"",
+                "副标题": "text-xs truncate\">&&</p>",
+                "链接": "href=\"&&\"",
+                "简介": "<span class=\"text-secondary  style_collapsible__Fz38i\">&&</span>",
+                "线路数组": "<a&&</a",
+                "线路标题": "class=\"whitespace-nowrap*>&&</span>",
+                "嗅探词": ".m3u8#.mp4",
+                "分类url": "https://39998.tv/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
+                "分类": "电影$1#剧集$2#综艺$3#动漫$4#短剧$49#成人$5"
+            }
+ 
