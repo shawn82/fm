@@ -1,5 +1,6 @@
  {
                 "主页url": "https://39998.tv/",
+	        "二次截取": "<div class=\"w-screen flex flex-1 flex-col\">&&</span></div>",
                 "数组": "class=\"flex flex-col items-center&&class=\"text-center text-sm mx-1&&</div",
                 "图片": "data-original=\"&&\"",
                 "标题": "alt=\"&&\"",
