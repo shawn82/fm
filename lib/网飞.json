@@ -13,7 +13,7 @@
 		"评分": "class=\"module-item-douban\">&&</div>",
 		
 		"线路数组": "class=\"module-tab-item tab-item&&</div>",
-        "线路标题": "data-dropdown-value=\"&&\"[排序:GQ线路>FM线路>iK线路>>SN线路>WL线路>HN线路] [不包含:SO线路#LS线路#FS线路#BF线路#UK线路#SD线路#WJ线路#TK线路>]",
+        "线路标题": "data-dropdown-value=\"&&\"[排序:GQ线路>FM线路>iK线路>>SN线路>WL线路>HN线路] [不包含:SO线路#LS线路#LZ线路#FS线路#BF线路#UK线路#SD线路#WJ线路#TK线路>]",
 		
 		"筛选": {
 			"dy": [
