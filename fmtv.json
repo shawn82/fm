@@ -7,6 +7,10 @@
       {
           "url": "https://raw.githubusercontent.com/shawn82/fm/main/316.json",
           "name": " 📺 | 追剧FMTV 1.0 "
-      }        
+      },
+      {
+          "url": "https://raw.githubusercontent.com/shawn82/fm/main/fm_anime.json",
+          "name": " 🍄 | 动漫FMTV "
+      }
   ]
 }
