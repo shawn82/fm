@@ -103,8 +103,7 @@
     "parses": [ 
 	    { "name": "Json聚合", "type": 3, "url": "Demo" }, 
 	    { "name": "Web聚合", "type": 3, "url": "Web" }, 
-            { "name": "4K解析","type":1,"url":"https://jk.tvd.us.kg/app/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%85%AD%E8%B6%A3.php?url=","ext":{"flag":["qq","腾讯","qiyi","爱奇艺","奇艺","youku","优酷","sohu","搜狐","letv","乐视","mgtv","芒果","tnmb","seven","bilibili","1905","NetFilx"],"header":{"User-Agent":"okhttp/4.9.1"}}}
-             ],
+            { "name": "4K解析","type":1,"url":"https://jk.tvd.us.kg/home/api?type=ys&uid=1305086&key=bhjkqrsvwzCGHKUW13&url=","ext":{"flag":["qq","腾讯","qiyi","爱奇艺","奇艺","youku","优酷","sohu","搜狐","letv","乐视","mgtv","芒果","tnmb","seven","bilibili","1905","NetFilx"],"header":{"User-Agent":"okhttp/4.9.1"}}}             ],
   "rules": [
   { "name": "proxy", "hosts": [ "raw.githubusercontent.com", "googlevideo.com", "googleapis.com", "cdn.v82u1l.com", "cdn.iz8qkg.com", "cdn.kin6c1.com", "c.biggggg.com", "c.olddddd.com", "haiwaikan.com", "www.histar.tv", "youtube.com", "uhibo.com", ".*boku.*", ".*nivod.*", ".*ulivetv.*" ] },
   { "name": "海外看", "hosts": [ "haiwaikan" ], "regex": [ "8.16", "8.1748", "10.0099", "10.3333", "10.85", "12.33", "16.0599" ] },
