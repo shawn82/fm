@@ -89,7 +89,7 @@
   { "key": "直播转点播", "name": "电台 | 收听", "type":3, "searchable":0, "style": { "type": "list"}, "api": "./lib/live2vod.js", "ext":"./lib/feimaolive.json"},
   { "key": "MTV", "name": "明星 | MV", "type": 3, "api": "csp_Bili", "searchable": 0, "quickSearch": 0, "ext": "./lib/MTV.json" , "jar": "./jar/PandaQ240724.jar"},   
   { "key": "Iktv","name": "KTV | 唱歌","type": 3,"api": "csp_WexIktv","searchable": 1,"changeable": 0,"jar": "./jar/wex.txt"},  
-  { "key": "网盘配置", "name": "Youtube配置", "type": 3, "api": "csp_Config", "searchable": 0, "changeable": 0, "ext":"./lib/tokenm.json", "style": { "type": "rect", "ratio": 1.5 } },
+  { "key": "网盘配置", "name": "Youtube配置", "type": 3, "api": "csp_Config", "searchable": 0, "changeable": 0, "ext":"./lib/tokenm.json", "jar" : "./jar/pg.jar", "style": { "type": "rect", "ratio": 1.5 } },
   { "key": "Youtube", "name": "Youtube", "type": 3, "api": "csp_Youtube", "searchable": 1, "quickSearch": 0, "changeable": 0, "timeout": 60, "jar" : "./jar/pg.jar","style": { "type": "rect", "ratio": 1.77 }, 
 					  "ext": {
 					  "json": "./lib/youtube.json",
