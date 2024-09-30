@@ -64,7 +64,7 @@
   { "key": "Ikanbot", "name": "爱看 | 影视", "type": 3, "api": "csp_Ikanbot", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 1 , "ext":"https://v.ikanbot.com"},  
   { "key": "索尼","name": "索尼 | 资源 ","type": 1,"api": "https://suoniapi.com/api.php/provide/vod","searchable": 1,"changeable": 1, "jar": "./jar/custom_spider.jar"},  
   { "key": "星星", "name": "星星 | 影视", "type": 3, "api": "csp_Star", "searchable": 1, "changeable": 1, "jar": "./jar/custom_spider.jar"}, 	  
-  { "key": "NanGua", "name": "南瓜 | 影视", "type":3, "api":"csp_NanGua", "searchable":1, "changeable":1},
+  { "key": "NanGua", "name": "南瓜 | 影视", "type":3, "api":"csp_NanGua", "searchable":1, "changeable":1, "jar": "./jar/pg.jar"},
 
   
 
