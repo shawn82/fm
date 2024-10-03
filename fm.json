@@ -5,7 +5,7 @@
   { "name": "直播1 - 大陆台湾区无法播放","type": 0, "url": "https://www.stream-link.org/stream-link.m3u", "playerType": 1 },
   { "name": "直播2 - 马来西亚" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/tvbox/master/mytvlist.txt", "playerType": 2 },	     
   //{ "name": "直播3 - 安博" ,"type": 0, "url": "https://tang.hz.cz/zb/anbo?token=1d831d46", "playerType": 2 },	   
-  { "name": "直播3 - 安博" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/ab.m3u8", "playerType": 2 },
+  //{ "name": "直播3 - 安博" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/ab.m3u8", "playerType": 2 },
   { "name": "直播4 - 神诞老人" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/smart.txt", "playerType": 2 },	   
   { "name": "直播5 - 美国" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/us.m3u8", "playerType": 2 },
   { "name": "直播6 - 正常" ,"type": 0, "url": "https://tv.iill.top/m3u/Gather", "playerType": 2 },
