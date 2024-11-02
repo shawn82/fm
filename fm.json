@@ -91,7 +91,7 @@
   { "key": "直播转点播", "name": "电台 | 收听", "type":3, "searchable":0, "style": { "type": "list"}, "api": "./lib/live2vod.js", "ext":"./lib/feimaolive.json"},
   { "key": "MTV", "name": "明星 | MV", "type": 3, "api": "csp_Bili", "searchable": 0, "quickSearch": 0, "ext": "./lib/MTV.json" , "jar": "./jar/PandaQ240724.jar"},   
   //{ "key": "Iktv","name": "KTV | 唱歌","type": 3, "api": "csp_WexIktv","searchable": 1,"changeable": 0,"jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1727484047569/wex.txt;md5;1a95bd32b2393cfe91755b6049d66840"},  
-  { "key": "hipy_js_KTV歌厅[听]", "name": "KTV歌厅", "type": 3, "api": "./lib/drpy2.min.js", "searchable": 1, "quickSearch": 1, "filterable": 1, "order_num": 0, "ext": "./drpy_js/KTV歌厅[听].js" },
+  { "key": "hipy_js_KTV歌厅[听]", "name": "KTV | 唱歌", "type": 3, "api": "./lib/drpy2.min.js", "searchable": 1, "quickSearch": 1, "filterable": 1, "order_num": 0, "ext": "./drpy_js/KTV歌厅[听].js" },
   { "key": "网盘配置", "name": "Youtube配置", "type": 3, "api": "csp_Config", "searchable": 0, "changeable": 0, "ext":"./lib/tokenm.json", "jar" : "./jar/pg.jar", "style": { "type": "rect", "ratio": 1.5 } },
   { "key": "Youtube", "name": "Youtube", "type": 3, "api": "csp_Youtube", "searchable": 1, "quickSearch": 0, "changeable": 0, "timeout": 60, "jar" : "./jar/pg.jar","style": { "type": "rect", "ratio": 1.77 }, 
 					  "ext": {
