@@ -91,7 +91,7 @@
   { "key": "ppxdm", "name": "PPX | 动漫", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/ppxdm.json" },  
   { "key": "看球", "name": "⚽88看球 | 直播", "type": 3, "api": "csp_Kanqiu", "searchable": 1, "changeable": 0, "style": { "type": "list" } , "jar": "./jar/custom_spider.jar"},    
   { "key": "310看球", "name": "⚽310看球 | 直播 ", "type": 3, "api": "./lib/drpy2.min.js", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0, "style": { "type": "list" }, "ext": "./drpy_js/310.js" },
-  { "key": "hipy_js_360吧[球]", "name": "⚽360吧 | 直播", "type": 3, "api": "./lib/drpy2.min.js", "searchable": 1, "playerType": "1", "quickSearch": 1, "filterable": 1, "order_num": 0, "ext": "./lib/360吧[球].js" }, 
+  //{ "key": "hipy_js_360吧[球]", "name": "⚽360吧 | 直播", "type": 3, "api": "./lib/drpy2.min.js", "searchable": 1, "playerType": "1", "quickSearch": 1, "filterable": 1, "order_num": 0, "ext": "./lib/360吧[球].js" }, 
   { "key": "926tv[球]_js", "name": "⚽926tv | 直播", "type": 3, "api": "./lib/drpy2.min.js", "searchable": 1, "quickSearch": 1, "filterable": 1, "order_num": 0, "ext": "./lib/926tv[球].js" },
   { "key": "直播转点播", "name": "电台 | 收听", "type":3, "searchable":0, "style": { "type": "list"}, "api": "./lib/live2vod.js", "ext":"./lib/feimaolive.json"},
   { "key": "MTV", "name": "明星 | MV", "type": 3, "api": "csp_Bili", "searchable": 0, "quickSearch": 0, "ext": "./lib/MTV.json" , "jar": "./jar/PandaQ240724.jar"},   
