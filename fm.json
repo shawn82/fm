@@ -12,7 +12,7 @@
   { "name": "直播7 - MYTV Super" ,"type": 0, "url": "https://tv.iill.top/m3u/MyTV", "playerType": 2 },
   { "name": "直播8 - 运动" ,"type": 0, "url": "https://tv.iill.top/m3u/Sport", "playerType": 2 }  
   ],   
-  "logo": "https://fai-mang.net/wp-content/uploads/2024/05/logoico.png",
+  "logo": "./logoico.png",
   "wallpaper": "http://fai-mang.net/image.php",
   "sites": [
   //{ "key": "lf_js_search","name":"搜索","type":3,"searchable":0,"changeable":1,"quickSearch":0,"filterable":0,"api":"./lib/lf_search3_min.js"}, 
