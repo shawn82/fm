@@ -1,6 +1,6 @@
 {
   "spider" : "./jar/pg316.jar",
-  "logo": "https://fai-mang.net/wp-content/uploads/2024/05/logoico.png",
+  "logo": "./logoico.png",
   "wallpaper": "http://fai-mang.net/image.php",
   "sites": [
 	//{ "key": "豆瓣", "name": "豆瓣 | 推荐", "type": 3, "api": "csp_Douban", "searchable": 0, "changeable": 1, "ext": "./lib/douban.json" },   
