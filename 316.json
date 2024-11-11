@@ -1,5 +1,5 @@
 {
-  "spider": "./jar/custom_spider.jar;md5;528c76fdf519c0411b619b75032eacb7",
+  "spider": "./jar/custom_spider.jar",
   "lives": [ { "name": "tvlive", "type": 0, "url": "http://xg.52sw.top:5000/mytvsuper.m3u", "playerType": 2 }, 
              { "name": "嗅探", "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0", "type": 0, "url": "http://xg.52sw.top:5000/mytvsuper.m3u","epg":"http://epg.112114.xyz/?ch={name}&date={date}","logo":"https://epg.112114.xyz/logo/{name}.png" } ],  
   "logo": "https://fai-mang.net/wp-content/uploads/2024/05/logoico.png",
