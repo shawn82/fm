@@ -21,6 +21,7 @@
   //{ "key": "T4-heimuer", "name": "神速 | 偶尔有广告", "type": 4, "api": "https://tang.hz.cz/power/hme?token=1d831d46", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },
   { "key": "php_heimuer", "name": "神速 | 无广告测试","type":4,"api":"https://json.doube.eu.org/app/index.php?site=webheimuer","searchable":1,"quickSearch":0,"filterable":0,"changeable":0},
   //{ "key": "T4-安博", "name": "安博 | 影视", "type": 4, "api": "https://tang.hz.cz/power/ub18?token=1d831d46", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },
+  { "key": "泥视频i", "name": "泥视频 I | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/nivodi.json" }, 	  
   { "key": "哈哈影视", "name": "哈哈 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "./lib/哈哈影视.json" },
   { "key": "香蕉影视", "name": "香蕉 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/香蕉影视.json" },  	  
   { "key": "hipy_guazi", "name": "瓜子┃影视", "type": 3, "api": "./lib/drpy2.min.js", "searchable": 1, "quickSearch": 1, "filterable": 1, "order_num": 0, "changeable": 0, "ext": "./drpy_js/瓜子.js" },
