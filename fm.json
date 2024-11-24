@@ -19,7 +19,7 @@
   //{ "key": "T4-欧乐", "name": "欧乐 | 影视", "type": 4, "api": "https://tang.hz.cz/power/olelive?token=1d831d46", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },	  
   { "key": "heimuer1", "name": "神速 | 无广告备用", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/黑木耳资源.json" },
   //{ "key": "T4-heimuer", "name": "神速 | 偶尔有广告", "type": 4, "api": "https://tang.hz.cz/power/hme?token=1d831d46", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },
-  { "key": "php_heimuer", "name": "神速 | 无广告测试","type":4,"api":"https://json.doube.eu.org/app/index.php?site=webheimuer","searchable":1,"quickSearch":0,"filterable":0,"changeable":0},
+  //{ "key": "php_heimuer", "name": "神速 | 无广告测试","type":4,"api":"https://json.doube.eu.org/app/index.php?site=webheimuer","searchable":1,"quickSearch":0,"filterable":0,"changeable":0},
   //{ "key": "T4-安博", "name": "安博 | 影视", "type": 4, "api": "https://tang.hz.cz/power/ub18?token=1d831d46", "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 0 },
   { "key": "yfsp", "name": "爱壹帆 | 影视 ", "type": 3, "searchable": 1, "changeable": 0, "style": { "type": "rect", "ratio": 0.75},"api": "csp_GM", "jar": "./jar/GM_ayf.jar",
       "ext": {
