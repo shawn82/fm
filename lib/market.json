@@ -15,10 +15,10 @@
         "version": "电视版"
       },
       {
-        "name": "1DM+ Pro版",
+        "name": "1DM+ Pro手机版",
         "url": "https://github.com/shawn82/fm/raw/refs/heads/main/store/odmp.apk",
         "icon": "https://store-images.s-microsoft.com/image/apps.13377.14462964569119254.41feb441-13b5-4d60-8e87-077297ca8c96.aeed484a-25ae-4923-9727-7d89b652ba9b",
-        "version": "手机专用"
+        "version": "下载影片专用"
       }
     ]
   }
