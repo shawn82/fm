@@ -3,16 +3,22 @@
     "name": "工具下载",
     "list": [
       {
-        "name": "DNS Change Pro版",
+        "name": "DNS Change Pro手机版",
         "url": "https://github.com/shawn82/fm/raw/refs/heads/main/store/DNScP.apk",
         "icon": "https://modyolo.com/wp-content/uploads/2021/11/dns-changer-mobile-data-wifi-ipv4-ipv6.jpg",
-        "version": "PRO"
+        "version": "手机版"
+      },
+      {
+        "name": "1DM+ Pro的电视版",
+        "url": "https://github.com/shawn82/fm/raw/refs/heads/main/store/DNS.apk",
+        "icon": "https://store-images.s-microsoft.com/image/apps.13377.14462964569119254.41feb441-13b5-4d60-8e87-077297ca8c96.aeed484a-25ae-4923-9727-7d89b652ba9b",
+        "version": "电视版"
       },
       {
         "name": "1DM+ Pro版",
         "url": "https://github.com/shawn82/fm/raw/refs/heads/main/store/odmp.apk",
         "icon": "https://store-images.s-microsoft.com/image/apps.13377.14462964569119254.41feb441-13b5-4d60-8e87-077297ca8c96.aeed484a-25ae-4923-9727-7d89b652ba9b",
-        "version": "PRO"
+        "version": "手机专用"
       }
     ]
   }
