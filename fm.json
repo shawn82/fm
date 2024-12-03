@@ -72,7 +72,7 @@
   { "key": "LiteApple", "name": "苹果 | 影视", "type":3, "playerType": "2", "api": "csp_Xpg", "searchable":1,"quickSearch":1, "filterable":1, "jar": "./jar/xmbjm.jar"}, 
   { "key": "比特", "name": "比特 | 影视", "type": 3, "api":"csp_Bttwo", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/PandaQ240724.jar"},
   { "key": "dr_低端", "name": "低端 | 影视", "type": 3, "api": "./lib/drpy2.min.js", "searchable": 1, "playerType": 2, "quickSearch": 1, "filterable": 1, "ext": "./lib/ddys.js" },  
-  { "key": "Wexjiohub", "name": "啾啾 | 影视", "type": 3, "api": "csp_Wexjiohub", "searchable": 1, "changeable": 1, "jar": "./jar/wex.txt" },  	  
+  //{ "key": "Wexjiohub", "name": "啾啾 | 影视", "type": 3, "api": "csp_Wexjiohub", "searchable": 1, "changeable": 1, "jar": "./jar/wex.txt" },  	  
   { "key": "纽约影视", "name": "纽约 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/纽约影视.json" },
   { "key": "Euvod影视", "name": "Euvod | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/Euvod影视.json" }, 
   { "key": "华乐影视", "name": "华乐 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./lib/华乐影视.json" }, 	  
