@@ -5,13 +5,13 @@
       {
         "name": "DNS Changer Pro手机版",
         "url": "https://github.com/shawn82/fm/raw/refs/heads/main/store/DNScP.apk",
-        "icon": "./dns.jpg",
+        "icon": "https://raw.githubusercontent.com/shawn82/fm/refs/heads/main/lib/dns.jpg",
         "version": "手机版"
       },
       {
         "name": "DNS Changer Pro电视版",
         "url": "https://github.com/shawn82/fm/raw/refs/heads/main/store/DNS.apk",
-        "icon": "./dns.jpg",
+        "icon": "https://raw.githubusercontent.com/shawn82/fm/refs/heads/main/lib/dns.jpg",
         "version": "电视版"
       },
       {
