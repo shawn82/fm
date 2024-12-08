@@ -72,7 +72,7 @@
 {"key":"91黑料","name":"91黑料","type":3,"api":"csp_XBPQ","jar":"./jar/XBPQ.jar","searchable":1,"quickSearch":1,"filterable":1,"ext":"./lib18/91黑料.json"},
 {"key":"我爱AV","name":"我爱AV","type":3,"api":"csp_XBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"./lib18/我爱AV.json","jar":"./jar/XBPQ.jar"},
 {"key": "av01", "name": "AV01 | 18", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1,"style": { "type": "rect", "ratio": 1.78 }, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib18/av01.json" },   
-//{"key": "javsb", "name": "JavSB | 18", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1,"style": { "type": "rect", "ratio": 1.78 }, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib18/javsb.json" },  
+{"key": "javsb", "name": "JavSB | 18", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1,"style": { "type": "rect", "ratio": 1.78 }, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib18/javsb.json" },  
 //{"key": "rjav", "name": "RJav | 18", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1,"style": { "type": "rect", "ratio": 1.78 }, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib18/rjav.json" },
 {"key": "RjavDrpy", "name": "RJAV", "type": 3, "api": "./lib/drpy2.min.js", "searchable": 1, "quickSearch": 1, "filterable": 1, "order_num": 0, "changeable": 0, "style": { "type": "rect", "ratio": 1.5}, "ext": "./lib18/rjav.js" },	
 {"key": "18instra", "name": "18Instra | 18", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "jar": "./jar/XBPQ.jar", "timeout": 60, "ext": "./lib18/18instra.json" },
