@@ -2,7 +2,7 @@
   "spider" : "./jar/pg316.jar",
   //取自Yang老大直播源
   "lives": [ 
-  //{ "name": "直播1 - 大陆台湾区无法播放","type": 0, "url": "https://www.stream-link.org/stream-link.m3u", "playerType": 1 },
+  { "name": "直播1 - 大陆台湾区无法播放","type": 0, "url": "https://www.stream-link.org/stream-link.m3u", "playerType": 1 },
   { "name": "直播2 - 马来西亚" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/tvbox/master/mytvlist.txt", "playerType": 2 },	     
   { "name": "直播3 - Gather" ,"type": 0, "url": "https://raw.githubusercontent.com/YanG-1989/m3u/refs/heads/main/Gather.m3u", "playerType": 2 },	   
   //{ "name": "直播3 - 安博" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/ab.m3u8", "playerType": 2 },
