@@ -2,7 +2,7 @@
   "spider" : "./jar/pg316.jar",
   //取自Yang老大直播源
   "lives": [ 
-  { "name": "直播1 - 大陆台湾区无法播放","type": 0, "url": "https://www.stream-link.org/stream-link.m3u", "playerType": 1 },
+  //{ "name": "直播1 - 大陆台湾区无法播放","type": 0, "url": "https://www.stream-link.org/stream-link.m3u", "playerType": 1 },
   { "name": "直播2 - 马来西亚" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/tvbox/master/mytvlist.txt", "playerType": 2 },	     
   { "name": "直播3 - Gather" ,"type": 0, "url": "https://raw.githubusercontent.com/YanG-1989/m3u/refs/heads/main/Gather.m3u", "playerType": 2 },	   
   //{ "name": "直播3 - 安博" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/ab.m3u8", "playerType": 2 },
@@ -138,7 +138,7 @@
 					  "type": "直播#新闻#剧集#电影#综艺#纪录片#音乐#体育#动物#风光#放松#4K#HDR#movie#music#documentary#bbc documentary#national geographic documentary",
 					  "keywords": "排行榜,HOT,TRENDS,热门话题,热门趋势,热门综艺,热门电影,热门电视剧,小姐姐",
 					  "codecs": ""}},
-  {"key":"Youtube12","name":"Youtube 2","type":3,"api":"csp_Youtube","searchable":1,"changeable":1,"style":{"type":"rect","ratio":1.433},"jar":"https://jihulab.com/Yoursmile/TVbox/-/raw/master/Yoursmile.jar","ext":{"json":"https://github.moeyy.xyz/https://raw.githubusercontent.com/yoursmile66/TVBox/main/sub/youtube.json","cookie":"http://127.0.0.1:9978/file/TVBox/youtubecookie.json"}},
+  {"key":"Youtube12","name":"Youtube 2","type":3,"api":"csp_Youtube","searchable":1,"changeable":1,"style":{"type":"rect","ratio":1.433},"jar":"https://jihulab.com/Yoursmile/TVbox/-/raw/master/Yoursmile.jar","ext":{"json":"https://github.moeyy.xyz/https://raw.githubusercontent.com/yoursmile66/TVBox/main/sub/youtube.json","cookie":"http://127.0.0.1:9978/file/TVBox/youtubecookie.json"}}
   //{"key":"应用商店","name":"应用商店","type":3,"api":"csp_Market","searchable":0,"changeable":0,"ext": "./lib/market.json"}	  
 
   ],
