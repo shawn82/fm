@@ -2,16 +2,10 @@
   "spider" : "./jar/pg316.jar",
   //取自Yang老大直播源
   "lives": [ 
-  //{ "name": "直播1 - 大陆台湾区无法播放","type": 0, "url": "https://www.stream-link.org/stream-link.m3u", "playerType": 1 },
-  { "name": "直播2 - 马来西亚" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/tvbox/master/mytvlist.txt", "playerType": 2 },	     
-  { "name": "直播3 - Gather Lite" ,"type": 0, "url": "https://raw.githubusercontent.com/YanG-1989/m3u/refs/heads/main/Gather.m3u", "playerType": 2 },	   
-  { "name": "直播3 - Gather Full" ,"type": 0, "url": "https://tv.iill.top/m3u/Gather", "playerType": 2 },	   
-  //{ "name": "直播3 - 安博" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/ab.m3u8", "playerType": 2 },
+  { "name": "直播1 - 马来西亚" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/tvbox/master/mytvlist.txt", "playerType": 2 },	     
+  { "name": "直播2 - 咪咕" ,"type": 0, "url": "https://www.freetv.top/migu.m3u", "playerType": 2 },	   
   { "name": "直播4 - AKTV" ,"type": 0, "url": "http://aktv.top/live.txt", "playerType": 2 },	   
-  { "name": "直播5 - 美国" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/us.m3u8", "playerType": 2 },
-  { "name": "直播6 - 正常" ,"type": 0, "url": "https://tv.iill.top/m3u/Gather", "playerType": 2 },
-  { "name": "直播7 - MYTV Super" ,"type": 0, "url": "https://tv.iill.top/m3u/MyTV", "playerType": 2 },
-  { "name": "直播8 - 运动" ,"type": 0, "url": "https://tv.iill.top/m3u/Sport", "playerType": 2 }  
+  { "name": "直播5 - 美国" ,"type": 0, "url": "https://raw.githubusercontent.com/shawn82/fm/main/lib/us.m3u8", "playerType": 2 }
   ],   
   "logo": "./logoico.png",
   "wallpaper": "http://fai-mang.net/image.php",
