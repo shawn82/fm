@@ -18,13 +18,19 @@
         "version": "手机版 v8a"
       },
       {
+        "name": "手机版 v7a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/v2.75/FMTV_2.5_mobile_2.7.5_v7a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "手机版 v8a"
+      },      
+      {
         "name": "电视版 v7a",
         "url": "https://github.com/shawn82/fmtv/releases/download/v2.75/FMTV_2.5_TV_2.7.5_v7a.apk",
         "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
         "version": "电视版 v7a"
       },
       {
-        "name": "电视版 4x",
+        "name": "旧安卓电视版 4x",
         "url": "https://github.com/shawn82/fmtv/releases/download/v2.75/FMTV_2.5_TV_2.5.0_4x.apk",
         "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
         "version": "(FOR BETTY)"
