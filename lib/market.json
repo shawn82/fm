@@ -1,5 +1,14 @@
 [
   {
+    "name": "推荐",
+    "list": [
+      {
+        "url": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png"
+      }
+    ]
+  },  
+  {
     "name": "FMTV",
     "list": [
       {
@@ -18,7 +27,7 @@
         "name": "电视版 4x",
         "url": "https://github.com/shawn82/fmtv/releases/download/v2.75/FMTV_2.5_TV_2.5.0_4x.apk",
         "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
-        "version": "电视版(FOR BETTY)"
+        "version": "(FOR BETTY)"
       }  
     ]
   },
