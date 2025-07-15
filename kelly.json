@@ -6,7 +6,7 @@
             "key": "播放清单",
             "name": "播放清单",
             "type": 4,
-            "api": "http://127.0.0.1:1988/lb?lb=9",           
+            "api": "https://fmtv01.ggff.net/kelly/fl.php",           
             "changeable": 1}
            ],
     "parses": [
