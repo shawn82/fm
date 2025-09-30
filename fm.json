@@ -1,7 +1,13 @@
-{
-  "spider" : "./jar/custom_spider.jar",
-  "sites": [
-	{ "key": "豆瓣", "name": "3月旧版2.0无法使用，请尽快到Facebook群组查看更新", "type": 3, "api": "csp_Douban", "searchable": 0, "changeable": 1, "ext": "./lib/douban.json" }, 
-	{ "key": "豆瓣1", "name": "即将进入2.5版本,旧版2.0即将停用", "type": 3, "api": "csp_Douban", "searchable": 0, "changeable": 1, "ext": "./lib/douban.json" }
-  ]
-}
+  {
+    "spider": "./custom_spider.jar",
+    "sites": [
+      {
+        "key": "FMTV",
+        "name": "📱 FMTV测试",
+        "type": 3,
+        "api": "csp_FMTV",
+        "searchable": 0,
+        "quickSearch": 0
+      }
+    ]
+  }
