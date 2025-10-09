@@ -326,15 +326,34 @@ class Spider(Spider):
                             html('.video-info-header h1').text() or
                             html('.title').text() or
                             html('.module-info-heading h1').text() or ''),
-                'vod_pic': (html('.module-item-pic img').attr('data-src') or
-                           html('.module-item-pic img').attr('src') or
-                           html('.video-cover img').attr('src') or
-                           html('img').eq(0).attr('data-src') or
-                           html('img').eq(0).attr('src') or ''),
                 'vod_content': (html('.vod_content').text() or
                                html('.video-info-item:contains("简介")').text() or
-                               html('.detail-content').text() or '')
+                               html('.detail-content').text() or
+                               html('.description').text() or '')
             }
+
+            # 提取封面图 - 排除logo
+            for img in html('img').items():
+                img_src = img.attr('data-src') or img.attr('src') or ''
+                # 排除logo和小图标
+                if img_src and 'logo' not in img_src.lower() and img_src.startswith('http'):
+                    # 检查图片尺寸属性或class，优先选大图
+                    if any(keyword in img_src for keyword in ['poster', 'cover', 'thumb']):
+                        vod['vod_pic'] = img_src
+                        break
+                    elif not vod.get('vod_pic'):
+                        vod['vod_pic'] = img_src
+
+            # 如果还是没有封面，尝试从style背景图提取
+            if not vod.get('vod_pic'):
+                for elem in html('[style*="background"]').items():
+                    style = elem.attr('style') or ''
+                    bg_match = re.search(r'url\(["\']?([^"\'()]+)["\']?\)', style)
+                    if bg_match:
+                        bg_url = bg_match.group(1)
+                        if 'logo' not in bg_url.lower():
+                            vod['vod_pic'] = urljoin(self.host, bg_url)
+                            break
 
             # 提取播放源和剧集
             play_from, play_url = self._extract_play_info(html, video_id)
@@ -535,31 +554,89 @@ class Spider(Spider):
         play_url = []
 
         try:
-            # 查找所有播放相关的链接
-            all_play_links = html('a[href*="/play/"]')
+            # 尝试查找剧集列表容器
+            episode_containers = [
+                '.module-play-list',
+                '.module-blocklist',
+                '.play-list',
+                '.episode-list',
+                '.stui-content__playlist',
+                '.playlist'
+            ]
 
-            if len(all_play_links) > 0:
-                play_from.append('默认')
-                episodes = []
-                processed_ids = set()
+            found_episodes = False
 
-                for link in all_play_links.items():
-                    href = link.attr('href')
-                    if href:
-                        match = re.search(r'/play/(\d+)', href)
-                        if match:
-                            ep_id = match.group(1)
-                            if ep_id not in processed_ids:
-                                processed_ids.add(ep_id)
-                                ep_name = link.text().strip() or f"第{len(episodes)+1}集"
-                                episodes.append(f"{ep_name}${ep_id}")
+            for container_selector in episode_containers:
+                container = html(container_selector)
+                if len(container) > 0:
+                    self.log(f"找到剧集容器: {container_selector}")
 
-                if episodes:
-                    play_url.append('#'.join(episodes))
-                    self.log(f"✅ 找到 {len(episodes)} 集")
+                    # 查找该容器内的所有播放链接
+                    episode_links = container.find('a[href*="/play/"]')
+
+                    if len(episode_links) > 0:
+                        play_from.append('默认')
+                        episodes = []
+                        processed_ids = set()
+
+                        for link in episode_links.items():
+                            href = link.attr('href')
+                            if href:
+                                match = re.search(r'/play/(\d+)', href)
+                                if match:
+                                    ep_id = match.group(1)
+                                    # 跳过当前正在播放的视频ID和重复的
+                                    if ep_id != video_id and ep_id not in processed_ids:
+                                        processed_ids.add(ep_id)
+                                        ep_name = link.text().strip()
+
+                                        # 过滤掉无效的剧集名
+                                        if ep_name and len(ep_name) < 50 and not any(
+                                            keyword in ep_name for keyword in ['简中', '繁中', '粤语', '国语']
+                                        ):
+                                            episodes.append(f"{ep_name}${ep_id}")
+                                        elif not ep_name:
+                                            episodes.append(f"第{len(episodes)+1}集${ep_id}")
+
+                        if episodes:
+                            play_url.append('#'.join(episodes))
+                            self.log(f"✅ 找到 {len(episodes)} 集")
+                            found_episodes = True
+                            break
+
+            # 如果以上容器都没找到，尝试通用方法
+            if not found_episodes:
+                all_play_links = html('a[href*="/play/"]')
+
+                if len(all_play_links) > 5:  # 至少有几集
+                    play_from.append('默认')
+                    episodes = []
+                    processed_ids = set()
+
+                    for link in all_play_links.items():
+                        href = link.attr('href')
+                        if href:
+                            match = re.search(r'/play/(\d+)', href)
+                            if match:
+                                ep_id = match.group(1)
+                                if ep_id != video_id and ep_id not in processed_ids:
+                                    processed_ids.add(ep_id)
+                                    ep_name = link.text().strip()
+
+                                    # 过滤无效剧集名
+                                    if ep_name and len(ep_name) < 50 and not any(
+                                        keyword in ep_name for keyword in ['简中', '繁中', '粤语', '国语', '首页', '搜索', '分类']
+                                    ):
+                                        episodes.append(f"{ep_name}${ep_id}")
+
+                    if episodes:
+                        play_url.append('#'.join(episodes))
+                        self.log(f"✅ 通用方法找到 {len(episodes)} 集")
 
         except Exception as e:
             self.log(f"提取播放信息失败: {e}")
+            import traceback
+            self.log(traceback.format_exc())
 
         return play_from, play_url
 
