@@ -9,7 +9,17 @@
         "searchable": 0,
         "quickSearch": 0,
         "ext":"733a32ea"
-      }
+      },
+      {
+        "key": "FMTV_backup",
+        "name": "📱 FMTV备份恢复",
+        "type": 3,
+        "api": "csp_BackupManager",
+        "searchable": 0,
+        "quickSearch": 0,
+        "ext":"733a32ea"
+      }      
     ]
 
   }
+
