@@ -1,0 +1,471 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+header('Content-Type: application/json; charset=utf-8');
+
+// 数据库连接
+function get_db_connection() {
+    require __DIR__ . '/config.inc.php';
+    try {
+        $dsn = sprintf(
+            "mysql:host=%s;dbname=%s;charset=utf8mb4",
+            $CONFIG['MYSQL']['host'],
+            $CONFIG['MYSQL']['database']
+        );
+        return new PDO($dsn, $CONFIG['MYSQL']['user'], $CONFIG['MYSQL']['password'], [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"
+        ]);
+    } catch (Exception $e) {
+        throw new Exception('数据库连接失败: ' . $e->getMessage());
+    }
+}
+
+// 静态分类和筛选数据
+$static_data = [
+    'class' => [
+        ['type_id' => '20', 'type_name' => '电影片'],
+        ['type_id' => '30', 'type_name' => '连续剧'],
+        ['type_id' => '39', 'type_name' => '动漫片'],
+        ['type_id' => '45', 'type_name' => '综艺片'],
+        ['type_id' => '51', 'type_name' => '电影解说'],
+        ['type_id' => '52', 'type_name' => '预告片'],
+        ['type_id' => '53', 'type_name' => '体育赛事'],
+        ['type_id' => '58', 'type_name' => '短剧大全']
+    ],
+    'filters' => [
+        '20' => [  // 电影片的筛选
+            [
+                'key' => 'class',
+                'name' => '类型',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+                    ['n' => '动作片', 'v' => '21'],
+                    ['n' => '喜剧片', 'v' => '22'],
+                    ['n' => '恐怖片', 'v' => '23'],
+                    ['n' => '科幻片', 'v' => '24'],
+                    ['n' => '爱情片', 'v' => '25'],
+                    ['n' => '剧情片', 'v' => '26'],
+                    ['n' => '战争片', 'v' => '27'],
+                    ['n' => '纪录片', 'v' => '28'],
+                    ['n' => '动画片', 'v' => '50']
+                ]
+            ],
+            [
+                'key' => 'area',
+                'name' => '地区',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+                    ['n' => '大陆', 'v' => '大陆'],
+                    ['n' => '香港', 'v' => '香港'],
+                    ['n' => '台湾', 'v' => '台湾'],
+                    ['n' => '美国', 'v' => '美国'],
+                    ['n' => '法国', 'v' => '法国'],
+                    ['n' => '英国', 'v' => '英国'],
+                    ['n' => '日本', 'v' => '日本'],
+                    ['n' => '韩国', 'v' => '韩国'],
+                    ['n' => '德国', 'v' => '德国'],
+                    ['n' => '泰国', 'v' => '泰国'],
+                    ['n' => '印度', 'v' => '印度'],
+                    ['n' => '其他', 'v' => '其他']
+                ]
+            ],
+            [
+                'key' => 'lang',
+                'name' => '语言',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+                    ['n' => '国语', 'v' => '国语'],
+                    ['n' => '英语', 'v' => '英语'],
+                    ['n' => '粤语', 'v' => '粤语'],
+                    ['n' => '闽南语', 'v' => '闽南语'],
+                    ['n' => '韩语', 'v' => '韩语'],
+                    ['n' => '日语', 'v' => '日语'],
+                    ['n' => '法语', 'v' => '法语'],
+                    ['n' => '德语', 'v' => '德语'],
+                    ['n' => '其它', 'v' => '其它']
+                ]
+            ],
+            [
+                'key' => 'year',
+                'name' => '年份',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+					['n' => '2025', 'v' => '2025'],	
+                    ['n' => '2024', 'v' => '2024'],
+                    ['n' => '2023', 'v' => '2023'],
+                    ['n' => '2022', 'v' => '2022'],
+                    ['n' => '2021', 'v' => '2021'],
+                    ['n' => '2020', 'v' => '2020'],
+                    ['n' => '2019', 'v' => '2019'],
+                    ['n' => '2018', 'v' => '2018'],
+                    ['n' => '2017', 'v' => '2017'],
+                    ['n' => '2016', 'v' => '2016'],
+                    ['n' => '2015', 'v' => '2015'],
+                    ['n' => '2014', 'v' => '2014'],
+                    ['n' => '更早', 'v' => '2013']
+                ]
+            ]
+        ],
+        
+        '30' => [  // 连续剧的筛选
+            [
+                'key' => 'class',
+                'name' => '类型',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+                    ['n' => '国产剧', 'v' => '31'],
+                    ['n' => '欧美剧', 'v' => '32'],
+                    ['n' => '香港剧', 'v' => '33'],
+                    ['n' => '韩国剧', 'v' => '34'],
+                    ['n' => '台湾剧', 'v' => '35'],
+                    ['n' => '日本剧', 'v' => '36'],
+                    ['n' => '海外剧', 'v' => '37'],
+                    ['n' => '泰国剧', 'v' => '38']
+                ]
+            ],
+            [
+                'key' => 'area',
+                'name' => '地区',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+                    ['n' => '大陆', 'v' => '大陆'],
+                    ['n' => '香港', 'v' => '香港'],
+                    ['n' => '台湾', 'v' => '台湾'],
+                    ['n' => '美国', 'v' => '美国'],
+                    ['n' => '法国', 'v' => '法国'],
+                    ['n' => '英国', 'v' => '英国'],
+                    ['n' => '日本', 'v' => '日本'],
+                    ['n' => '韩国', 'v' => '韩国'],
+                    ['n' => '德国', 'v' => '德国'],
+                    ['n' => '泰国', 'v' => '泰国'],
+                    ['n' => '印度', 'v' => '印度'],
+                    ['n' => '其他', 'v' => '其他']
+                ]
+            ],
+            [
+                'key' => 'lang',
+                'name' => '语言',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+                    ['n' => '国语', 'v' => '国语'],
+                    ['n' => '英语', 'v' => '英语'],
+                    ['n' => '粤语', 'v' => '粤语'],
+                    ['n' => '闽南语', 'v' => '闽南语'],
+                    ['n' => '韩语', 'v' => '韩语'],
+                    ['n' => '日语', 'v' => '日语'],
+                    ['n' => '法语', 'v' => '法语'],
+                    ['n' => '德语', 'v' => '德语'],
+                    ['n' => '其它', 'v' => '其它']
+                ]
+            ],
+            [
+                'key' => 'year',
+                'name' => '年份',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+					['n' => '2025', 'v' => '2025'],	
+                    ['n' => '2024', 'v' => '2024'],
+                    ['n' => '2023', 'v' => '2023'],
+                    ['n' => '2022', 'v' => '2022'],
+                    ['n' => '2021', 'v' => '2021'],
+                    ['n' => '2020', 'v' => '2020'],
+                    ['n' => '2019', 'v' => '2019'],
+                    ['n' => '2018', 'v' => '2018'],
+                    ['n' => '2017', 'v' => '2017'],
+                    ['n' => '2016', 'v' => '2016'],
+                    ['n' => '2015', 'v' => '2015'],
+                    ['n' => '2014', 'v' => '2014'],
+                    ['n' => '更早', 'v' => '2013']
+                ]
+            ]
+        ],
+
+        '39' => [  // 动漫片的筛选
+            [
+                'key' => 'class',
+                'name' => '类型',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+                    ['n' => '国产动漫', 'v' => '40'],
+                    ['n' => '日韩动漫', 'v' => '41'],
+                    ['n' => '欧美动漫', 'v' => '42'],
+                    ['n' => '港台动漫', 'v' => '43'],
+                    ['n' => '海外动漫', 'v' => '44']
+                ]
+            ]
+        ],
+
+        '45' => [  // 综艺片的筛选
+            [
+                'key' => 'class',
+                'name' => '类型',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+                    ['n' => '大陆综艺', 'v' => '46'],
+                    ['n' => '港台综艺', 'v' => '47'],
+                    ['n' => '日韩综艺', 'v' => '48'],
+                    ['n' => '欧美综艺', 'v' => '49']
+                ]
+            ]
+        ],
+
+        '53' => [  // 体育赛事的筛选
+            [
+                'key' => 'class',
+                'name' => '类型',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+                    ['n' => '足球', 'v' => '54'],
+                    ['n' => '篮球', 'v' => '55'],
+                    ['n' => '网球', 'v' => '56'],
+                    ['n' => '斯诺克', 'v' => '57']
+                ]
+            ]
+        ],
+
+        '58' => [  // 短剧大全的筛选
+            [
+                'key' => 'class',
+                'name' => '类型',
+                'value' => [
+                    ['n' => '全部', 'v' => ''],
+                    ['n' => '重生民国', 'v' => '59'],
+                    ['n' => '穿越年代', 'v' => '60'],
+                    ['n' => '现代言情', 'v' => '61'],
+                    ['n' => '反转爽文', 'v' => '62'],
+                    ['n' => '女恋总裁', 'v' => '63'],
+                    ['n' => '闪婚离婚', 'v' => '64'],
+                    ['n' => '都市脑洞', 'v' => '65'],
+                    ['n' => '古装仙侠', 'v' => '66']
+                ]
+            ]
+        ]
+    ]
+];
+
+// 复制筛选配置
+foreach (['39', '45'] as $type_id) {  // 动漫和综艺
+    $static_data['filters'][$type_id][1] = $static_data['filters']['20'][1]; // 复制地区筛选
+    $static_data['filters'][$type_id][2] = $static_data['filters']['20'][3]; // 复制年份筛选
+}
+
+try {
+    $db = get_db_connection();
+    parse_str($_SERVER['QUERY_STRING'], $params);
+    
+    // 处理详情请求
+    if (isset($params['ids'])) {
+        $sql = "SELECT vod_id, vod_name, vod_pic, vod_remarks, vod_play_from, vod_play_url, 
+                vod_year, vod_area, vod_lang, vod_class, vod_actor, vod_director, vod_content 
+                FROM cj WHERE vod_id = :id";
+        $stmt = $db->prepare($sql);
+        $stmt->execute(['id' => $params['ids']]);
+        $detail = $stmt->fetch();
+        
+        if ($detail) {
+            echo json_encode([
+                'code' => 1,
+                'msg' => '获取成功',
+                'list' => [$detail]
+            ], JSON_UNESCAPED_UNICODE);
+        } else {
+            echo json_encode([
+                'code' => 0,
+                'msg' => '数据不存在'
+            ], JSON_UNESCAPED_UNICODE);
+        }
+        exit;
+    }
+
+    if (empty($_SERVER['QUERY_STRING'])) {
+        // 获取每个分类的数量
+        $type_counts = [];
+        $stmt = $db->query("SELECT type_id, COUNT(*) as count FROM cj GROUP BY type_id");
+        while ($row = $stmt->fetch()) {
+            $type_counts[$row['type_id']] = $row['count'];
+        }
+        
+        // 获取最新数据作为列表
+        $stmt = $db->query("SELECT vod_id, vod_name, vod_pic, vod_remarks, vod_year 
+                           FROM cj 
+                           WHERE vod_name != '' 
+                           ORDER BY vod_time DESC 
+                           LIMIT 20");
+        $list = $stmt->fetchAll();
+        
+        echo json_encode([
+            'code' => 1,
+            'msg' => '数据列表',
+            'class' => $static_data['class'],
+            'filters' => $static_data['filters'],
+            'page' => 1,
+            'pagecount' => 1,
+            'limit' => 20,
+            'total' => array_sum($type_counts),
+            'list' => $list
+        ], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    
+    // 处理搜索请求
+    if (isset($params['wd'])) {
+        $sql = "SELECT vod_id, vod_name, vod_pic, vod_remarks FROM cj WHERE vod_name LIKE :search OR vod_actor LIKE :search OR vod_director LIKE :search";
+        $stmt = $db->prepare($sql);
+        $stmt->execute(['search' => "%{$params['wd']}%"]);
+        $list = $stmt->fetchAll();
+        
+        echo json_encode([
+            'code' => 1,
+            'msg' => '数据列表',
+            'page' => 1,
+            'pagecount' => 1,
+            'limit' => 20,
+            'total' => count($list),
+            'list' => $list
+        ], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    
+    // 处理分类和筛选请求
+    $where = [];
+    $values = [];
+
+    // 解析筛选参数
+    $filters = [];
+    if (!empty($params['f'])) {
+        $filters = json_decode($params['f'], true);
+    }
+
+    // 处理分类请求
+    if (isset($params['t']) || !empty($filters['class'])) {
+        // 如果有 class 参数，直接使用它
+        if (!empty($filters['class'])) {
+            $where[] = "type_id = :class";
+            $values[':class'] = $filters['class'];
+        }
+        // 如果只有 t 参数，使用一级分类的 type_id 范围
+        else if (isset($params['t'])) {
+            $type_id = $params['t'];
+            switch($type_id) {
+                case '20': // 电影片
+                    $where[] = "type_id IN (20,21,22,23,24,25,26,27,28,50)";
+                    break;
+                case '30': // 连续剧
+                    $where[] = "type_id IN (30,31,32,33,34,35,36,37,38)";
+                    break;
+                case '39': // 动漫片
+                    $where[] = "type_id IN (39,40,41,42,43,44)";
+                    break;
+                case '45': // 综艺片
+                    $where[] = "type_id IN (45,46,47,48,49)";
+                    break;
+                case '51': // 电影解说
+                    $where[] = "type_id = 51";
+                    break;
+                case '52': // 预告片
+                    $where[] = "type_id = 52";
+                    break;
+                case '53': // 体育赛事
+                    $where[] = "type_id IN (53,54,55,56,57)";
+                    break;
+                case '58': // 短剧大全
+                    $where[] = "type_id IN (58,59,60,61,62,63,64,65,66)";
+                    break;
+            }
+        }
+    }
+    
+    // 处理其他筛选条件
+    if (!empty($filters['area'])) {
+        $where[] = "vod_area = :area";
+        $values[':area'] = $filters['area'];
+    }
+    
+    if (!empty($filters['year'])) {
+        if ($filters['year'] == '2013') {
+            $where[] = "vod_year <= :year";
+        } else {
+            $where[] = "vod_year = :year";
+        }
+        $values[':year'] = $filters['year'];
+    }
+    
+    if (!empty($filters['lang'])) {
+        $where[] = "vod_lang = :lang";
+        $values[':lang'] = $filters['lang'];
+    }
+    
+    // 修改分页部分
+    $page = isset($params['pg']) ? max(1, intval($params['pg'])) : 1;
+    $limit = isset($params['limit']) ? intval($params['limit']) : 20;
+    $offset = ($page - 1) * $limit;
+
+    // 先获取总数
+    $count_sql = "SELECT COUNT(*) FROM cj";
+    if (!empty($where)) {
+        $count_sql .= " WHERE " . implode(" AND ", $where);
+    }
+    $stmt = $db->prepare($count_sql);
+    if (!empty($values)) {
+        $stmt->execute($values);
+    } else {
+        $stmt->execute();
+    }
+    $total = $stmt->fetchColumn();
+
+    // 构建数据查询SQL
+    $sql = "SELECT vod_id, vod_name, vod_pic, vod_remarks, vod_year FROM cj";
+    if (!empty($where)) {
+        $sql .= " WHERE " . implode(" AND ", $where);
+    }
+
+    // 添加排序
+    $order_by = !empty($filters['by']) ? $filters['by'] : 'time';
+    switch ($order_by) {
+        case 'time':
+            $sql .= " ORDER BY vod_time DESC";
+            break;
+        case 'hits':
+            $sql .= " ORDER BY vod_hits DESC";
+            break;
+        case 'score':
+            $sql .= " ORDER BY vod_score DESC";
+            break;
+        default:
+            $sql .= " ORDER BY vod_time DESC";
+    }
+
+    // 添加分页
+    $sql .= " LIMIT " . $limit . " OFFSET " . $offset;
+
+    // 获取数据
+    $stmt = $db->prepare($sql);
+    if (!empty($values)) {
+        $stmt->execute($values);
+    } else {
+        $stmt->execute();
+    }
+    $list = $stmt->fetchAll();
+
+    // 输出数据
+    echo json_encode([
+        'code' => 1,
+        'msg' => '数据列表',
+        'page' => $page,
+        'pagecount' => ceil($total / $limit),
+        'limit' => $limit,
+        'total' => $total,
+        'list' => $list
+    ], JSON_UNESCAPED_UNICODE);
+    
+} catch (Exception $e) {
+    echo json_encode([
+        'code' => 0,
+        'msg' => '数据库错误',
+        'error' => $e->getMessage()
+    ], JSON_UNESCAPED_UNICODE);
+}
+?> 
