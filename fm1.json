@@ -18,10 +18,12 @@
         "searchable": 0,
         "quickSearch": 0,
         "ext":"733a32ea"
-      }      
+      },
+        { "key": "应用商店", "name": "应用商店","type":3,"api":"csp_Market","searchable":0,"changeable":0,"ext": "./lib/market.json"}	
     ]
 
   }
+
 
 
 
