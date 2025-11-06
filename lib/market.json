@@ -1,0 +1,127 @@
+[
+  {
+    "name": "推荐",
+    "list": [
+      {
+        "url": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png"
+      }
+    ]
+  },
+  {
+    "name": "v2.97",
+    "list": [
+      {
+        "name": "手机版 v8a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/V2.97/FMTV_2.5_mobile_2.9.7_v8a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.97 手机版 v8a"
+      },
+      {
+        "name": "手机版 v7a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/V2.97/FMTV_2.5_mobile_2.9.7_v7a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.97 手机版 v7a"
+      },      
+      {
+        "name": "电视版 v7a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/V2.97/FMTV_2.5_TV_2.9.7_v7a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.97 电视版 v7a"
+      }
+    ]
+  },
+
+      {
+    "name": "v2.90",
+    "list": [
+      {
+        "name": "手机版 v8a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/V2.90/FMTV_2.5_mobile_2.9.0_v8a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.90 手机版 v8a"
+      },
+      {
+        "name": "手机版 v7a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/V2.90/FMTV_2.5_mobile_2.9.0_v7a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.90 手机版 v7a"
+      },      
+      {
+        "name": "电视版 v7a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/V2.90/FMTV_2.5_TV_2.9.0_v7a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.90 电视版 v7a"
+      }
+    ]
+  },    
+  {
+    "name": "v2.89",
+    "list": [
+      {
+        "name": "手机版 v8a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/V2.89/FMTV_2.5_mobile_2.8.9_v8a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.89 手机版 v8a"
+      },
+      {
+        "name": "手机版 v7a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/V2.89/FMTV_2.5_mobile_2.8.9_v7a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.89 手机版 v7a"
+      },      
+      {
+        "name": "电视版 v7a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/V2.89/FMTV_2.5_TV_2.8.9_v7a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.89 电视版 v7a"
+      }
+    ]
+  },  
+  {
+    "name": "v2.75",
+    "list": [
+      {
+        "name": "手机版 v8a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/v2.75/FMTV_2.5_mobile_2.7.5_v8a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.75 手机版 v8a"
+      },
+      {
+        "name": "手机版 v7a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/v2.75/FMTV_2.5_mobile_2.7.5_v7a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.75 手机版 v7a"
+      },      
+      {
+        "name": "电视版 v7a",
+        "url": "https://github.com/shawn82/fmtv/releases/download/v2.75/FMTV_2.5_TV_2.7.5_v7a.apk",
+        "icon": "https://simg.doyo.cn/imgfile/bgame/202412/05100856dyyd.png",
+        "version": "2.75 电视版 v7a"
+      }
+    ]
+  },
+  {
+    "name": "工具下载",
+    "list": [
+      {
+        "name": "DNS Changer Pro手机版",
+        "url": "https://github.com/shawn82/fmtv/releases/download/v2.75/FMTV_2.75_DNScP.apk",
+        "icon": "https://raw.githubusercontent.com/shawn82/fm/refs/heads/main/lib/dns.jpg",
+        "version": "手机版"
+      },
+      {
+        "name": "DNS Changer Pro电视版",
+        "url": "https://github.com/shawn82/fmtv/releases/download/v2.75/FMTV_2.75_DNS.apk",
+        "icon": "https://raw.githubusercontent.com/shawn82/fm/refs/heads/main/lib/dns.jpg",
+        "version": "电视版"
+      },
+      {
+        "name": "1DM+ Pro手机版",
+        "url": "https://github.com/shawn82/fmtv/releases/download/v2.75/FMTV_2.75_odmp.apk",
+        "icon": "https://store-images.s-microsoft.com/image/apps.13377.14462964569119254.41feb441-13b5-4d60-8e87-077297ca8c96.aeed484a-25ae-4923-9727-7d89b652ba9b",
+        "version": "下载影片专用"
+      }
+    ]
+  }
+]
