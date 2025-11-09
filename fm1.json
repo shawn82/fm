@@ -1,5 +1,6 @@
   {
     "spider": "./custom_spider.jar",
+    "logo": "https://fmtv.xyz/public/api/icon/get.php?token=733a32ea",
     "sites": [
       {
         "key": "FMTV",
@@ -23,6 +24,7 @@
     ]
 
   }
+
 
 
 
