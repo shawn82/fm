@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FongMi TV 监控面板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .controls {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .input-group {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 600px) {
+            .input-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .input-group input {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .status {
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            min-height: 42px;
+        }
+
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .progress-bar-scan {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.5s ease;
+            border-radius: 4px;
+        }
+
+        .devices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .device-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .device-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .device-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            padding-right: 40px;
+            border-bottom: 2px solid #f0f0f0;
+            position: relative;
+        }
+
+        .device-ip {
+            font-size: 18px;
+            font-weight: 700;
+            color: #667eea;
+            flex-shrink: 0;
+        }
+
+        .device-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .status-online {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .video-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .video-title.idle {
+            color: #ccc;
+            font-style: italic;
+        }
+
+        .video-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+
+        .meta-item {
+            padding: 4px 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .info-row {
+            margin: 8px 0;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .remove-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(244, 67, 54, 0.1);
+            border: none;
+            color: #f44336;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 32px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .remove-btn:hover {
+            background: #f44336;
+            color: white;
+        }
+
+        .no-devices {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 12px;
+            color: #666;
+        }
+
+        .tip-box {
+            margin-top: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 FongMi TV 监控</h1>
+            <p>实时显示 TV Box 播放内容</p>
+            <div id="protocolWarning" style="display: none; margin-top: 10px; padding: 10px; background: #fff3cd; color: #856404; border-radius: 8px; font-size: 14px;">
+                ⚠️ 检测到本地文件访问模式，刷新功能可能无法使用。<br>
+                建议：将此文件放到 HTTP 服务器上访问
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="input-group">
+                <input type="text" id="ipInput" placeholder="输入IP地址 (选填，留空扫描 192.168.0.x)">
+                <button class="btn btn-primary" id="addBtn">➕ 添加</button>
+                <button class="btn btn-primary" id="scanBtn">🔍 扫描</button>
+            </div>
+            <div id="statusMsg"></div>
+        </div>
+
+        <div class="devices-grid" id="devicesGrid">
+            <div class="no-devices">
+                <div style="font-size: 64px; margin-bottom: 20px;">📺</div>
+                <h3>还没有添加设备</h3>
+                <p>点击上方按钮来添加或扫描设备</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const devices = new Map();
+        const websockets = new Map();
+        let isScanning = false;
+
+        // 显示状态消息
+        function showStatus(message, type = 'info', progress = null) {
+            const statusMsg = document.getElementById('statusMsg');
+            statusMsg.className = `status ${type}`;
+            
+            if (progress !== null) {
+                statusMsg.innerHTML = `
+                    ${message}
+                    <div class="progress-bar-scan">
+                        <div class="progress-fill" style="width: ${progress}%"></div>
+                    </div>
+                `;
+            } else {
+                statusMsg.innerHTML = message;
+            }
+        }
+
+        // 添加设备
+        function addDevice() {
+            const ipInput = document.getElementById('ipInput');
+            let ip = ipInput.value.trim();
+            
+            console.log('添加设备:', ip);
+            
+            if (!ip) {
+                showStatus('❌ 请输入IP地址', 'error');
+                return;
+            }
+            
+            ip = ip.replace(/\s+/g, '');
+            
+            const ipPattern = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/;
+            const match = ip.match(ipPattern);
+            
+            if (!match) {
+                showStatus('❌ IP格式不正确', 'error');
+                return;
+            }
+            
+            for (let i = 1; i <= 4; i++) {
+                const num = parseInt(match[i]);
+                if (num < 0 || num > 255) {
+                    showStatus('❌ IP数字必须在0-255之间', 'error');
+                    return;
+                }
+            }
+            
+            if (devices.has(ip)) {
+                showStatus('⚠️ 设备已存在', 'error');
+                return;
+            }
+            
+            devices.set(ip, {
+                ip: ip,
+                connected: false,
+                title: null,
+                remarks: null,
+                year: null,
+                area: null,
+                vodClass: null,
+                actor: null,
+                director: null,
+                currentEpisode: null,
+                lastUpdate: new Date()
+            });
+            
+            connectWebSocket(ip);
+            renderDevices();
+            // 添加后不清空输入框，方便扫描
+            // ipInput.value = '';
+            showStatus(`✅ 已添加 ${ip}`, 'success');
+        }
+
+        // 连接WebSocket
+        function connectWebSocket(ip) {
+            if (window.location.protocol === 'https:') {
+                showStatus('❌ HTTPS页面无法连接，请使用HTTP访问', 'error');
+                return;
+            }
+            
+            console.log(`连接 ${ip}`);
+            
+            try {
+                const ws = new WebSocket(`ws://${ip}:9978`);
+                
+                ws.onopen = () => {
+                    console.log(`✅ ${ip} 连接成功`);
+                    updateDevice(ip, { connected: true });
+                    
+                    setInterval(() => {
+                        if (ws.readyState === WebSocket.OPEN) {
+                            ws.send('HEARTBEAT');
+                        }
+                    }, 1000);
+                };
+
+                ws.onmessage = (event) => {
+                    if (event.data !== 'HEARTBEAT') {
+                        parseMessage(ip, event.data);
+                    }
+                };
+
+                ws.onerror = (error) => {
+                    console.error(`❌ ${ip} 连接错误`);
+                    updateDevice(ip, { connected: false });
+                };
+
+                ws.onclose = () => {
+                    console.log(`🔌 ${ip} 断开`);
+                    updateDevice(ip, { connected: false });
+                    setTimeout(() => {
+                        if (devices.has(ip)) {
+                            connectWebSocket(ip);
+                        }
+                    }, 5000);
+                };
+
+                websockets.set(ip, ws);
+            } catch (error) {
+                console.error(`连接失败: ${ip}`, error);
+            }
+        }
+
+        // 解析消息
+        function parseMessage(ip, message) {
+            const device = devices.get(ip);
+            if (!device) return;
+
+            let updated = false;
+
+            // 提取视频信息
+            if (message.includes('vod_name')) {
+                const nameMatch = message.match(/"vod_name":"([^"]+)"/);
+                const remarksMatch = message.match(/"vod_remarks":"([^"]*)"/);
+                const yearMatch = message.match(/"vod_year":"([^"]*)"/);
+                const areaMatch = message.match(/"vod_area":"([^"]*)"/);
+                const classMatch = message.match(/"vod_class":"([^"]*)"/);
+                const actorMatch = message.match(/"vod_actor":"([^"]*)"/);
+                const directorMatch = message.match(/"vod_director":"([^"]*)"/);
+                
+                if (nameMatch) {
+                    // 清空之前的集数信息（因为是新视频）
+                    device.currentEpisode = null;
+                    
+                    device.title = nameMatch[1];
+                    device.remarks = remarksMatch ? remarksMatch[1] : null;
+                    device.year = yearMatch ? yearMatch[1] : null;
+                    device.area = areaMatch ? areaMatch[1] : null;
+                    device.vodClass = classMatch ? classMatch[1] : null;
+                    device.actor = actorMatch ? actorMatch[1] : null;
+                    device.director = directorMatch ? directorMatch[1] : null;
+                    console.log(`${ip}: ${device.title}`);
+                    updated = true;
+                }
+            }
+            
+            // 提取集数 - 只有在有明确集数标记时才更新
+            if (message.includes('第') && message.includes('集')) {
+                const episodeMatch = message.match(/第0*(\d+)集/);
+                if (episodeMatch) {
+                    const newEpisode = episodeMatch[1];
+                    // 只有当集数发生变化时才更新
+                    if (device.currentEpisode !== newEpisode) {
+                        device.currentEpisode = newEpisode;
+                        console.log(`${ip}: 第${device.currentEpisode}集`);
+                        updated = true;
+                    }
+                }
+            } else if (message.includes('%E7%AC%AC') && message.includes('%E9%9B%86')) {
+                // URL编码的集数
+                const episodeMatch = message.match(/%E7%AC%AC0*(\d+)%E9%9B%86/);
+                if (episodeMatch) {
+                    const newEpisode = episodeMatch[1];
+                    if (device.currentEpisode !== newEpisode) {
+                        device.currentEpisode = newEpisode;
+                        console.log(`${ip}: 第${device.currentEpisode}集`);
+                        updated = true;
+                    }
+                }
+            }
+
+            if (updated) {
+                device.lastUpdate = new Date();
+                renderDevices();
+            }
+        }
+
+        // 更新设备
+        function updateDevice(ip, updates) {
+            const device = devices.get(ip);
+            if (device) {
+                Object.assign(device, updates);
+                device.lastUpdate = new Date();
+                renderDevices();
+            }
+        }
+
+        // 渲染设备
+        function renderDevices() {
+            const grid = document.getElementById('devicesGrid');
+            
+            if (devices.size === 0) {
+                grid.innerHTML = `
+                    <div class="no-devices">
+                        <div style="font-size: 64px; margin-bottom: 20px;">📺</div>
+                        <h3>还没有添加设备</h3>
+                        <p>点击上方按钮来添加或扫描设备</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = '';
+            
+            devices.forEach((device, ip) => {
+                const card = document.createElement('div');
+                card.className = 'device-card';
+                
+                card.innerHTML = `
+                    <div class="device-header">
+                        <div class="device-ip">📍 ${ip}</div>
+                        <div class="device-status ${device.connected ? 'status-online' : ''}">
+                            ${device.connected ? '● 在线' : '○ 离线'}
+                        </div>
+                        <button class="remove-btn" onclick="removeDevice('${ip}')">×</button>
+                    </div>
+                    
+                    <div class="video-title ${!device.title ? 'idle' : ''}">
+                        ${device.title || '等待播放...'}
+                        ${device.currentEpisode ? ` · 第${device.currentEpisode}集` : ''}
+                    </div>
+                    
+                    ${device.title ? `
+                        <div class="video-meta">
+                            ${device.remarks ? `<div class="meta-item">🎬 ${device.remarks}</div>` : ''}
+                            ${device.year ? `<div class="meta-item">📅 ${device.year}</div>` : ''}
+                            ${device.area ? `<div class="meta-item">🌍 ${device.area}</div>` : ''}
+                        </div>
+                        ${device.vodClass ? `<div class="info-row"><strong>分类：</strong>${device.vodClass}</div>` : ''}
+                        ${device.actor ? `<div class="info-row"><strong>演员：</strong>${device.actor.split(',').slice(0, 4).join('、')}</div>` : ''}
+                        ${device.director ? `<div class="info-row"><strong>导演：</strong>${device.director}</div>` : ''}
+                    ` : ''}
+                    
+                    <div style="margin-top: 15px;">
+                        <button class="btn btn-primary" style="width: 100%; padding: 10px; font-size: 14px;" onclick="refreshDevice('${ip}')">
+                            🔄 刷新播放信息
+                        </button>
+                    </div>
+                    
+                    <div style="margin-top: 10px; font-size: 12px; color: #999;">
+                        ${device.lastUpdate.toLocaleTimeString()}
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // 刷新设备信息 - 简化版
+        async function refreshDevice(ip) {
+            console.log(`🔄 刷新设备: ${ip}`);
+            
+            // 检查协议
+            if (window.location.protocol === 'file:') {
+                showStatus('❌ 本地文件模式无法刷新，请通过HTTP访问', 'error');
+                console.error('❌ file:// 协议不支持刷新功能');
+                setTimeout(() => showStatus('', 'info'), 3000);
+                return;
+            }
+            
+            try {
+                const url = `http://${ip}:9978/action?do=refresh&type=detail`;
+                
+                // 第1次刷新
+                await fetch(url, { method: 'GET', mode: 'no-cors', cache: 'no-cache' });
+                console.log(`✅ 第1次刷新`);
+                
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                // 第2次刷新
+                await fetch(url, { method: 'GET', mode: 'no-cors', cache: 'no-cache' });
+                console.log(`✅ 第2次刷新`);
+                
+                showStatus(`✅ 已刷新 ${ip}`, 'success');
+                setTimeout(() => showStatus('', 'info'), 2000);
+                
+            } catch (error) {
+                console.error(`❌ 刷新失败:`, error);
+                showStatus(`⚠️ 刷新失败`, 'error');
+            }
+        }
+
+        // 页面关闭时清理连接
+        window.addEventListener('beforeunload', () => {
+            websockets.forEach(ws => ws.close());
+        });
+
+        // 移除设备
+        function removeDevice(ip) {
+            if (confirm(`确定移除 ${ip}?`)) {
+                if (websockets.has(ip)) {
+                    websockets.get(ip).close();
+                    websockets.delete(ip);
+                }
+                devices.delete(ip);
+                renderDevices();
+            }
+        }
+
+        // 获取本机局域网IP地址 - 增强版
+        async function getLocalIP() {
+            return new Promise((resolve) => {
+                try {
+                    // 创建多个 STUN 服务器尝试
+                    const stunServers = [
+                        "stun:stun.l.google.com:19302",
+                        "stun:stun1.l.google.com:19302",
+                        "stun:stun2.l.google.com:19302"
+                    ];
+                    
+                    const pc = new RTCPeerConnection({
+                        iceServers: stunServers.map(url => ({ urls: url }))
+                    });
+                    
+                    pc.createDataChannel('');
+                    pc.createOffer().then(offer => pc.setLocalDescription(offer));
+                    
+                    const timeout = setTimeout(() => {
+                        pc.close();
+                        console.log('❌ WebRTC 检测超时');
+                        resolve(null);
+                    }, 5000);
+                    
+                    let foundLocalIP = false;
+                    let candidateCount = 0;
+                    
+                    pc.onicecandidate = (ice) => {
+                        if (!ice || !ice.candidate || !ice.candidate.candidate) {
+                            return;
+                        }
+                        
+                        candidateCount++;
+                        console.log(`🔍 ICE候选 #${candidateCount}: ${ice.candidate.candidate}`);
+                        
+                        const match = ice.candidate.candidate.match(/(\d+\.\d+\.\d+\.\d+)/);
+                        if (match && match[1]) {
+                            const fullIP = match[1];
+                            const parts = fullIP.split('.');
+                            const ipPrefix = `${parts[0]}.${parts[1]}.${parts[2]}`;
+                            
+                            console.log(`📡 检测到IP: ${fullIP}`);
+                            
+                            const isPrivateIP = 
+                                fullIP.startsWith('192.168.') ||
+                                fullIP.startsWith('10.') ||
+                                (fullIP.startsWith('172.') && parseInt(parts[1]) >= 16 && parseInt(parts[1]) <= 31);
+                            
+                            if (isPrivateIP && !foundLocalIP) {
+                                foundLocalIP = true;
+                                clearTimeout(timeout);
+                                pc.close();
+                                console.log(`✅ 检测到局域网段: ${ipPrefix}.x`);
+                                resolve(ipPrefix);
+                            } else if (!isPrivateIP) {
+                                console.log(`⏭️ 跳过公网IP: ${fullIP}`);
+                            }
+                        }
+                    };
+                    
+                    pc.onicegatheringstatechange = () => {
+                        console.log(`🔄 ICE状态: ${pc.iceGatheringState}`);
+                        if (pc.iceGatheringState === 'complete' && !foundLocalIP) {
+                            clearTimeout(timeout);
+                            pc.close();
+                            console.log(`❌ ICE收集完成，但未找到局域网IP`);
+                            resolve(null);
+                        }
+                    };
+                    
+                } catch (error) {
+                    console.error('❌ WebRTC错误:', error);
+                    resolve(null);
+                }
+            });
+        }
+
+        // 自动扫描 - 调试版
+        async function startScan() {
+            if (isScanning) {
+                showStatus('⚠️ 正在扫描中', 'info');
+                return;
+            }
+            
+            if (window.location.protocol === 'https:') {
+                showStatus('❌ 请使用HTTP', 'error');
+                return;
+            }
+            
+            isScanning = true;
+            
+            let ipRanges = [];
+            const ipInput = document.getElementById('ipInput');
+            const inputIP = ipInput.value.trim();
+            
+            // 步骤1: 确定扫描网段
+            if (inputIP) {
+                const ipPattern = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/;
+                const match = inputIP.match(ipPattern);
+                
+                if (match) {
+                    const prefix = `${match[1]}.${match[2]}.${match[3]}`;
+                    ipRanges.push(prefix);
+                    console.log(`📍 使用输入IP: ${inputIP} → 网段: ${prefix}.x`);
+                    showStatus(`🔍 扫描 ${prefix}.x`, 'info', 0);
+                } else {
+                    showStatus('❌ IP格式错误', 'error');
+                    isScanning = false;
+                    return;
+                }
+            } else {
+                // 不尝试自动检测，直接使用默认网段
+                ipRanges = ['192.168.0'];
+                console.log('💡 使用默认网段: 192.168.0.x (大部分路由器使用此网段)');
+                showStatus('🔍 扫描 192.168.0.x', 'info', 0);
+            }
+            
+            console.log('🔍 开始扫描 9978 端口...');
+            console.log(`📡 扫描网段: ${ipRanges.join(', ')}`);
+            
+            let foundCount = 0;
+            let scannedCount = 0;
+            const totalIPs = ipRanges.length * 254;
+            
+            for (const prefix of ipRanges) {
+                for (let i = 1; i <= 254; i += 20) {
+                    const batchStart = i;
+                    const batchEnd = Math.min(i + 19, 254);
+                    
+                    const promises = [];
+                    for (let j = i; j < i + 20 && j <= 254; j++) {
+                        promises.push(checkDevice(`${prefix}.${j}`));
+                    }
+                    
+                    const results = await Promise.all(promises);
+                    
+                    results.forEach(ip => {
+                        if (ip) {
+                            if (!devices.has(ip)) {
+                                console.log(`✅ 发现: ${ip}`);
+                                devices.set(ip, {
+                                    ip: ip,
+                                    connected: false,
+                                    title: null,
+                                    remarks: null,
+                                    year: null,
+                                    area: null,
+                                    vodClass: null,
+                                    actor: null,
+                                    director: null,
+                                    currentEpisode: null,
+                                    lastUpdate: new Date()
+                                });
+                                connectWebSocket(ip);
+                                foundCount++;
+                                renderDevices();
+                            }
+                        }
+                    });
+                    
+                    scannedCount += 20;
+                    const progress = Math.min(Math.round((scannedCount / totalIPs) * 100), 100);
+                    
+                    if (foundCount > 0) {
+                        showStatus(`✅ 已发现 ${foundCount} 台设备`, 'success', progress);
+                    } else {
+                        showStatus(`🔍 扫描中...`, 'info', progress);
+                    }
+                }
+            }
+            
+            isScanning = false;
+            
+            if (foundCount > 0) {
+                showStatus(`✅ 扫描完成，共 ${foundCount} 台`, 'success', 100);
+                console.log(`✅ 扫描完成，共 ${foundCount} 台`);
+            } else {
+                showStatus('❌ 未发现设备', 'error');
+                console.log('❌ 未发现设备');
+            }
+        }
+
+        // 检查设备 - 使用和connectWebSocket相同的方式
+        async function checkDevice(ip) {
+            return new Promise((resolve) => {
+                let resolved = false;
+                let ws = null;
+                
+                const timeout = setTimeout(() => {
+                    if (!resolved) {
+                        resolved = true;
+                        if (ws) {
+                            try {
+                                ws.close();
+                            } catch (e) {}
+                        }
+                        resolve(null);
+                    }
+                }, 3000);
+                
+                try {
+                    ws = new WebSocket(`ws://${ip}:9978`);
+                    
+                    ws.onopen = () => {
+                        if (!resolved) {
+                            resolved = true;
+                            clearTimeout(timeout);
+                            console.log(`✅ ${ip}`);
+                            // 发送一次心跳确认连接
+                            try {
+                                ws.send('HEARTBEAT');
+                                setTimeout(() => {
+                                    try {
+                                        ws.close();
+                                    } catch (e) {}
+                                }, 100);
+                            } catch (e) {
+                                ws.close();
+                            }
+                            resolve(ip);
+                        }
+                    };
+
+                    ws.onerror = (error) => {
+                        if (!resolved) {
+                            resolved = true;
+                            clearTimeout(timeout);
+                            resolve(null);
+                        }
+                    };
+
+                    ws.onclose = () => {
+                        if (!resolved) {
+                            resolved = true;
+                            clearTimeout(timeout);
+                            resolve(null);
+                        }
+                    };
+                    
+                } catch (e) {
+                    if (!resolved) {
+                        resolved = true;
+                        clearTimeout(timeout);
+                        resolve(null);
+                    }
+                }
+            });
+        }
+
+        // 绑定事件
+        document.getElementById('addBtn').addEventListener('click', addDevice);
+        document.getElementById('scanBtn').addEventListener('click', startScan);
+        document.getElementById('ipInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addDevice();
+            }
+        });
+
+        // 页面关闭清理
+        window.addEventListener('beforeunload', () => {
+            websockets.forEach(ws => ws.close());
+        });
+    </script>
+</body>
+</html>
