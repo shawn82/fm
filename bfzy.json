@@ -7,7 +7,7 @@
     "desc": "暴风资源站 - 仅电影和电视剧",
     "nsfw": false,
     "status": true,
-    "api": "https://bfzyapi.com/api.php/provide/vod/",
+    "api": "https://bfzyapi.com/api.php",
     "extra": {
       "searchLimit": 20,
       "gfw": false,
